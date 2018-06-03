@@ -6,6 +6,7 @@ set cpu mpx
 set pd enabled
 set pd on
 set dpy enabled
+set imx enabled
 set tk enabled
 at tk 10000
 set mty enabled
