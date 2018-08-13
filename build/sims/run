@@ -5,6 +5,8 @@ set cpu idle
 set cpu mpx
 set pd enabled
 set pd on
+set cpu pdp6
+set pdp6 enabled
 set dpy enabled
 set tk enabled
 at tk 10000
