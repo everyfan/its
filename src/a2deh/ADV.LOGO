@@ -4,7 +4,7 @@
 ;;; to load code, type in LLOGO prompt:
 ;;; readfile adv logo dsk a2deh
 
-;;; ver 0.11
+;;; ver 0.12
 
 ;; Overall orchestration and init the world procedures
 
@@ -271,7 +271,7 @@ TO DONE
 20 MAKE "SCORE" SCORE2 :ITEMS
 30 IF :SCORE = 0 NOTHING STOP CMD
 40 PR SE [YOUR SCORE IS] :SCORE
-50 IF :SCORE = 550 PR [PERFECT] ELSE PRINT [THERE IS MORE TREASURE THOUGH.]
+50 IF :SCORE = 550 PR [$PERFECT!$] ELSE PRINT [$THERE'S MORE TREASURE, THOUGH.$]
 END
 
 TO SCORE2 :LIST
