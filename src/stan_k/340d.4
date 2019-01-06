@@ -14,6 +14,7 @@ title 340d - Datapoint emulator for 340 display.
 ; - Run on PDP-6.
 
 ifndef new,new=0	;Use new ASCII characters instead of old.
+ifndef stkp,stkp=1      ;Use Stanford keyboard.
 
 width=117
 height=50
@@ -51,7 +52,8 @@ start:	move p,[-pdllen,,pdl-1]
 	 .lose
 	.open styi,[.uii,,'STY]
 	 .lose
-	.open ttyi,[.uii,,'TTY]
+ifn stkp,.open ttyi,[.uii+40,,'STK]
+.else,	.open ttyi,[.uii,,'TTY]
 	 .lose
 	.call [ setz
 		sixbit /cnsget/
