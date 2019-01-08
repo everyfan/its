@@ -4,7 +4,7 @@
 ;;; to load code, type in LLOGO prompt:
 ;;; readfile adv logo dsk a2deh
 
-;;; ver 0.13
+;;; ver 0.14
 ;; Overall orchestration and init the world procedures
 
 TO ADVENTURE
