@@ -1113,7 +1113,7 @@ BEG1:	SETZM TOPFLG
 	PUSHJ P,TMPT	;OUTPUT HH:MM:SS
 	PUSHJ P,CRR
 BEG1LN:	HRRZ D,MODE	;GET MODE
-IFN 0,[
+IFN 1,[
 	SKIPGE XCHFLG
 	 JRST [	CAIN D,%MDMPX	; Mplxrs open, skip if should be off
 		 JRST .+1	; Still on, OK.
@@ -1222,7 +1222,7 @@ MDTAB:
 %MD1LN::MODEF "F,1PEEK,,	"Fast 1-line (job#)"
 %MDSCH::MODEF "G,NORMAL,,	"Swap variables"
 	MODEF "H,MEML,%MFERO,	"Histogram of mem usage"
-IFN 0,[
+IFN 1,[
 %MDMPX::MODEF "I,MPXR,,		"IMX??"
 ];IFN 0
 %MDJHK::MODEF "J,JHACK,,	"Joint S+C+A (job#)"
@@ -2690,7 +2690,7 @@ UMSPLS:	ATYPE [ASCIZ /MSP: LOSER??/]
 
 SUBTTL	Mode "I" - IMX/OMX display (obsolete)
 
-IFN 0,[
+IFN 1,[
 
 ;INPUT AND OUTPUT MULTIPLEXORS DISPLAY
 MPXR:	SKIPL XCHFLG
