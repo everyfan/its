@@ -34,6 +34,12 @@ tvcon() {
     started "TV-console" "$!"
 }
 
+pdp6() {
+    cp build/sims/pdp6.ini tools/pdp6/emu/init.ini
+    (sleep 4; cd tools/pdp6/emu; ./pdp6 >pdp6.log 2>&1) &
+    started "PDP-6" "$!"
+}
+
 while test -n "$1"; do
     "$1"
     shift
