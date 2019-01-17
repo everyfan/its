@@ -1622,7 +1622,26 @@ This uuo was for hacking the AMF arm.  The arm no longer exists.
 	clock on which this was based.  Said clock ceased to work many
 	years ago.
 
-.POTSET
+.POTSET block				hack A/D channels
+
+	This uuo hacks the A/D multiplexor.
+	The address <block> should be the start of a table of pot
+	connection specifications.  This table consists of up to 20 blocks
+	of 4 words, followed by a 0 word.  The block format is as follows:
+
+	FOO/	Multiplexor channel,,control bits
+	FOO+1/	Byte spec, variable address
+	FOO+2/	Lower limit (value at pot = 0)
+	FOO+3/	Upper limit (value at pot = 10000)
+	Control bits:
+	2.9	Delete only (if disconnect previous ose of pot, no new
+		attachment).
+	1.2	Absolute if ON, incremental if OFF.
+	1.1	Floating if ON, fixed if OFF.
+	Byte Spec:
+	0	Full word; standard byte pointer for partial word
+		(no index or indirect allowed).
+
 
 .RBTC ac,				robot console switches
 
